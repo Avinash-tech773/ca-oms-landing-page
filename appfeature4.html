@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head >
+    <title>App Feature</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="ThemeZaa" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+   
+    <!-- favicon icon -->
+    <link rel="shortcut icon" href="./favicons/CA-Logo.png" />
+    <!-- google fonts preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- style sheets and font icons -->
+    <link rel="stylesheet" href="css/css-vendors.min.css" />
+    <link rel="stylesheet" href="css/css-icon.min.css" />
+    <link rel="stylesheet" href="css/css-style.min.css" />
+    <link rel="stylesheet" href="css/css-responsive.min.css" />
+    <link rel="stylesheet" href="css/elearning-elearning.css" />
+    <style>
+  /* Optional: Add a hover effect for images */
+  .image-hoverable {
+    transition: transform 0.3s ease-in-out;
+  }
+ #extraContent {
+      display: none; /* Hide additional content by default */
+    }
+    #readMoreButton {
+      color: blue;
+      cursor: pointer;
+      text-decoration: underline;
+      border: none;
+      background: none;
+      font-size: 1rem;
+    }
+ /* General Responsive Adjustments */
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 15px;
+    }
+
+    .d-flex.flex-row {
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+    }
+
+    .w-50 {
+      width: 100% !important;
+    }
+
+    .p-4 {
+      padding: 1.5rem 1rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .p-4 {
+      padding: 1rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: #0F75BC;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  background-color: transparent !important;;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #0F75BC;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 20%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+.data-justify-content-center{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 50px;
+  width: 70%;
+}
+
+.sign_button{
+  background: #0F75BC;
+  padding: 5px 40px;
+  border: none;
+  border-radius: 6px;
+}
+.button12{
+  background: #ffffff;
+  padding: 5px 40px;
+  border: none;
+  border-radius: 6px;
+}
+.w-40 {
+    width: 40%;
+  }
+  .d-flex {
+    display: flex;
+  }
+  .flex-column {
+    flex-direction: column;
+  }
+  .justify-content-start {
+    justify-content: flex-start;
+  }
+  .align-items-start {
+    align-items: flex-start;
+  }
+  .p-4 {
+    padding: 1.5rem;
+  }
+  .flex-grow-1 {
+    flex-grow: 1;
+  }
+  .text-container {
+    margin-bottom: 0; /* Ensure no margin at the bottom */
+  }
+  .text-start {
+    text-align: left;
+  }
+  .mb-4 {
+    margin-bottom: 1.5rem;
+  }
+  .sign_button, .button12 {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    cursor: pointer;
+  }
+  .sign_button {
+    background-color: #0F75BC;
+  }
+  .button12 {
+    background-color: white;
+    border: 1px solid #0F75BC;
+  }
+  .sign_button a, .button12 a {
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .sign_button a {
+    color: white;
+  }
+  .button12 a {
+    color: #0F75BC;
+  }
+</style>
+
+  </head>
+  <body
+  
+   
+  >
+    <!-- start header -->
+     
+    <header >
+      <!-- start navigation -->
+      <nav
+        class="navbar navbar-expand-lg header-transparent bg-transparent header-reverse"
+        data-header-hover="light"
+      >
+        <div class="container">
+          <div class="col-auto col-lg-2 me-lg-0 me-auto">
+            <a class="navbar-brand" href="demo-elearning.html">
+              <img
+                src="./favicons/CA-Logo.png"
+                data-at2x="images/demo-elearning-logo-white@2x.png"
+                alt=""
+                class="default-logo"
+              />
+              <img
+                src="./favicons/CA-Logo.png"
+                data-at2x="images/demo-elearning-logo-black@2x.png"
+                alt=""
+                class="alt-logo"
+              />
+              <img
+                src="./favicons/CA-Logo.png"
+                data-at2x="images/demo-elearning-logo-black@2x.png"
+                alt=""
+                class="mobile-logo"
+              />
+            </a>
+          </div>
+          <div class="col-auto menu-order position-static">
+            <button
+              class="navbar-toggler float-start"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-line"></span>
+              <span class="navbar-toggler-line"></span>
+              <span class="navbar-toggler-line"></span>
+              <span class="navbar-toggler-line"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav alt-font">
+                <li class="nav-item">
+                  <a href="index.html#home" class="nav-link text-black">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a href="index.html#pricingDetails" class="nav-link text-black">Pricing</a>
+                </li>
+                <li class="nav-item dropdown dropdown-with-icon">
+                  <a href="index.html#appfeature" class="nav-link text-black"
+                    >App Features</a
+                  >
+                  
+                  
+                </li>
+                <li class="nav-item">
+                  <a href="freetrial.html" class="nav-link text-black"
+                    >Free Trial</a
+                  >
+                </li>
+                <!-- <li class="nav-item">
+                  <a href="demo-elearning-testimonial.html" class="nav-link"
+                    >Testimonial</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a href="demo-elearning-blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a href="demo-elearning-contact.html" class="nav-link"
+                    >Contact</a
+                  >
+                </li> -->
+              </ul>
+            </div>
+          </div> 
+          <!-- https://admin.ca-oms.in/login -->
+          
+                   <div class="d-flex align-items-center g-2 ">
+                    <button class=" btn">
+                    <i class="bi bi-box-arrow-in-right" style="color: black;"></i>
+                  
+                    <a href="https://admin.ca-oms.in/login">Login</a></button>
+           </div>
+          <!-- <button style="background-color:transparent; border-radius: 10px; padding: 5px 30px; color: white; ">
+            
+             <i class="bi bi-person"style="color: black; font-size: 20px;"></i>
+         <a href="./freetrial.html" style="color: rgb(0, 0, 0);">Sign up  </a>
+          </button> -->
+
+      </nav>
+      <!-- end navigation -->
+    </header>
+ 
+    <!-- end header -->
+    <!-- start section -->
+   <section
+  class="p-0 overflow-hidden bg-dark-gray full-screen ipad-top-space-margin md-h-auto position-relative md-pb-70px sm-pb-40px cover-background"
+  style="background-image: url('./favicons/Blog\ -\ Nowgray.jpg')"
+>
+  <div
+    class="background-position-center-top h-100 w-100 position-absolute left-0px top-0"
+    style="background-image: url('images/vertical-line-bg-small.svg')"
+  ></div>
+<div
+        id="particles-style-01"
+        class="h-100 position-absolute left-0px top-0 w-100"
+        data-particle="true"
+        data-particle-options='{"particles": {"number": {"value": 6,"density": {"enable": true,"value_area": 2000}},"color": {"value": ["#d5d52b", "#d5d52b", "#d5d52b", "#d5d52b", "#d5d52b"]},"shape": {"type": "circle","stroke":{"width":0,"color":"#000000"}},"opacity": {"value": 1,"random": false,"anim": {"enable": false,"speed": 1,"sync": false}},"size": {"value": 8,"random": true,"anim": {"enable": false,"sync": true}},"line_linked":{"enable":false,"distance":0,"color":"#ffffff","opacity":1,"width":1},"move": {"enable": true,"speed":1,"direction": "right","random": false,"straight": false}},"interactivity": {"detect_on": "canvas","events": {"onhover": {"enable": false,"mode": "repulse"},"onclick": {"enable": false,"mode": "push"},"resize": true}},"retina_detect": false}'
+      ></div>
+  <!-- Box with two parts -->
+  <div
+    class="container h-100 d-flex align-items-center justify-content-center position-relative"
+    style="z-index: 2; "
+  >
+    <div
+      class="d-flex flex-row  flex-wrap"
+      style=" height: auto; overflow: hidden;"
+    >
+ <div
+   class="w-40 d-flex flex-column justify-content-start align-items-start p-4 flex-grow-1"
+>
+  <div class="text-container text-start w-100 mb-4"> 
+    <!-- Container for heading and paragraph -->
+    <h2 class="text-dark font-weight-bold mb-3">Customization</h2>
+    <p class="text-muted">
+Our CA office management software offers customizable features for efficient operations. From task management to HR and client data, GST invoicing, and workflow automation, our software optimizes efficiency and streamlines operations.    </p>
+  </div>
+  <div class="d-flex justify-content-start gap-2"> 
+    <!-- Flex container for buttons aligned to the left -->
+    <button
+      type="button"
+      class="sign_button"
+      onclick="openIframe()"
+      style="color: white;"
+    >
+      Enquiry now
+    </button>
+    <button
+      type="button"
+      class="button12"
+    >
+      <a   style="color: #0F75BC;" href="./freetrial.html">Free Trial</a>
+    </button>
+  </div>
+
+
+  <!-- <div id="iframe-container" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; background: rgba(0, 0, 0, 0.7); display: flex; justify-content: center; align-items: center;">
+  <div id="iframe-wrapper" style="position: relative; width: 90%; max-width: 600px; height: 80%; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);">
+  </div>
+</div> -->
+
+  <!-- Container to dynamically embed iframe -->
+  <div id="iframe-container" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; background: rgba(0, 0, 0, 0.7);">
+    <div id="iframe-wrapper" style="position: relative; margin: auto; width: 90%; max-width: 600px; height: 80%; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);">
+    </div>
+  </div>
+</div>
+
+<script>
+  function openIframe() {
+    const iframeContainer = document.getElementById('iframe-container');
+    const iframeWrapper = document.getElementById('iframe-wrapper');
+    
+    // Clear existing iframe if any
+    iframeWrapper.innerHTML = '';
+
+    // Create new iframe element
+    const iframe = document.createElement('iframe');
+    iframe.src = './form.html'; // Set the source of the iframe
+    iframe.style.width = '100%'; // Full width of the wrapper
+    iframe.style.height = '100%'; // Full height of the wrapper
+    iframe.style.border = 'none'; // Remove border
+    iframe.style.background = '#fff'; // Ensure a clean background
+
+    // Append iframe to wrapper
+    iframeWrapper.appendChild(iframe);
+
+    // Display the container
+    iframeContainer.style.display = 'flex'; // Ensure flex display
+
+    // Add click listener to close iframe when clicking outside
+    iframeContainer.addEventListener('click', closeIframe);
+  }
+
+  function closeIframe(event) {
+    const iframeContainer = document.getElementById('iframe-container');
+    const iframeWrapper = document.getElementById('iframe-wrapper');
+
+    // Close only if the click is outside the iframe wrapper
+    if (!iframeWrapper.contains(event.target)) {
+      iframeContainer.style.display = 'none'; // Hide the iframe container
+      iframeWrapper.innerHTML = ''; // Clear the content
+      iframeContainer.removeEventListener('click', closeIframe); // Remove event listener
+    }
+  }
+</script>
+
+
+
+
+
+
+<!-- Scrollable modal -->
+<div class="modal-dialog modal-dialog-scrollable">
+ <a href="./form.html"></a>
+</div>
+
+      <!-- Left Part -->
+      <div
+        class="w-60 d-flex flex-column justify-content-center align-items-center p-4 flex-grow-1"
+       
+      >
+        
+
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext"></div>
+    <img src="./images/employmaster.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext"></div>
+    <img src="./images/Attendence1.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext"></div>
+    <img src="./images/Salaries1.jpg" style="width:100%">
+  </div>
+  <div class="mySlides">
+    <div class="numbertext"></div>
+    <img src="./images/Expenses1.jpg" style="width:100%">
+  </div>
+  <div class="mySlides">
+    <div class="numbertext"></div>
+    <img src="./images/Officenotes1.jpg" style="width:100%">
+  </div>
+    
+  <!-- <div class="mySlides">
+    <div class="numbertext"></div>
+    <img src="./images/19.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+    <img src="./images/20.jpg" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+    <img src="./images/21.jpg" style="width:100%">
+  </div> -->
+    
+  <a class="prev" onclick="plusSlides(-1)" >❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column"  >
+      <img class="demo cursor" src="./images/employmaster.jpg" style="border: 1px solid; margin-top: 10px; width:100%" onclick="currentSlide(1)" alt="Employee Management">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./images/Attendence1.jpg" style=" border: 1px solid; margin-top: 10px;width:100%" onclick="currentSlide(2)" alt="Attendance">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./images/Salaries1.jpg" style=" border: 1px solid; margin-top: 10px; width:100%" onclick="currentSlide(3)" alt="Salaries">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./images/Expenses1.jpg" style=" border: 1px solid; margin-top: 10px; width:100%" onclick="currentSlide(4)" alt="Expenses">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./images/Officenotes1.jpg" style=" border: 1px solid; margin-top: 10px; width:100%" onclick="currentSlide(5)" alt="Office Notes">
+    </div>
+    <!-- <div class="column">
+      <img class="demo cursor" src="./images/19.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./images/20.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="./images/20.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+    </div> -->
+  </div>
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+      </div>
+
+      <!-- Right Part -->
+  
+
+
+
+
+      
+    </div>
+  </div>
+</section>
+<section
+      class="bg-gradient-tranquil-white overflow-hidden position-relative overlap-height pb-5 md-pb-7 xs-pb-50px"
+      style="background-image: url('./favicons/Blog\ -\ Nowgray.jpg')"
+     >
+      
+          <div
+            class="col-xxl-4 col-md-5 text-center text-md-end"
+            data-anime='{ "translateX": [-50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'
+          >
+            <a
+              href="./pricing form.html"
+              class="btn btn-link btn-hover-animation-switch btn-extra-large text-dark-gray fw-600"
+            >
+             
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <a href="./pricing form.html"></a>
+        </div>
+        <div class="row justify-content-center mt-5">
+          <!-- start features box item -->
+          <div
+            class="col-auto icon-with-text-style-08 md-mb-10px xs-mb-15px pe-25px md-pe-15px"
+            data-anime='{ "translateX": [-50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'
+           >
+            <div class="feature-box feature-box-left-icon-middle xs-lh-28">
+              <div class="feature-box-icon me-10px">
+                <i class="feather icon-feather-mail fs-20 text-dark-gray"></i>
+              </div>
+              <div class="feature-box-content">
+                <span class="text-dark-gray fw-500 fs-20 xs-fs-18 ls-minus-05px"
+                  >Looking for help?
+                  <a
+                    href="8881361111"
+                    class="text-decoration-line-bottom-medium text-dark-gray fw-600"
+                    >Contact us today</a
+                  ></span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- end features box item -->
+          <!-- start features box item -->
+          <div
+            class="col-auto icon-with-text-style-08 ps-25px md-ps-15px md-pe-15px"
+            data-anime='{ "translateX": [50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'
+          >
+            <div class="feature-box feature-box-left-icon-middle xs-lh-28">
+              <div class="feature-box-icon me-10px">
+                <i
+                  class="feather icon-feather-thumbs-up fs-20 text-dark-gray"
+                ></i>
+              </div>
+              <div class="feature-box-content">
+                <span class="text-dark-gray fw-500 fs-20 xs-fs-18 ls-minus-05px"
+                  >Keep in Touch.
+                  <a
+                    href="#"
+                    class="text-decoration-line-bottom-medium text-dark-gray fw-600"
+                    >Like us on Facebook</a
+                  ></span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- end features box item -->
+        </div>
+      </div>
+    </section>
+    <footer class="bg-gradient-aztec-green position-relative">
+      <div class="position-absolute left-minus-100px top-25px">
+        <img src="images/images-demo-elearning-bg-05.png" alt="" class="w-80" />
+      </div>
+      <div
+        class="background-position-center-top h-100 w-100 position-absolute left-0px top-0"
+        style="background-image: url('images/vertical-line-bg-small.svg')"
+      ></div>
+      <div class="container overlap-section">
+        <div
+          class="row g-0 justify-content-center align-items-center text-center bg-base-color border-radius-6px ps-5 pe-5 pt-3 pb-3 mb-8 sm-p-25px background-position-left-bottom background-no-repeat contain-background position-relative"
+          style="background-image: url('images/demo-elearning-bg-06.png')"
+        >
+          <!-- start footer column -->
+          <div class="col-lg-auto lg-mb-20px">
+            <h4
+              class="alt-font fw-600 text-white m-0 ls-minus-1px d-inline-block me-30px lg-me-0 "
+            >
+              Improve your productivity.
+            </h4>
+          </div>
+          <!-- end footer column -->
+          <!-- start footer column -->
+          <div class="col-auto">
+            <a
+              href="./freetrial.html"
+              class="btn btn-extra-large btn-dark-gray btn-rounded btn-box-shadow btn-switch-text d-inline-block me-20px align-middle xs-m-0"
+            >
+              <span>
+                <span class="btn-text" data-text="Get started now"
+                  >Get started now</span
+                >
+                <span><i class="feather icon-feather-thumbs-up"></i></span>
+              </span>
+            </a>
+            <span
+              class="d-block d-sm-inline-block text-dark-gray fs-19 fw-600 left-icon d-inline-block align-middle xs-mt-10px ls-minus-05px"
+              ><a href="tel:8881361111"
+                ><i class="feather icon-feather-phone-call"></i>+91 888 136 1111</a
+              ></span
+            >
+          </div>
+          <!-- end footer column -->
+        </div>
+      </div>
+      <div
+        class="container footer-dark text-center text-sm-start position-relative "
+       >
+      
+        <div class="row mb-5 sm-mb-7 xs-mb-30px">
+          
+          <!-- start footer column -->
+          <div
+            class="col-lg-2 col-md-4 col-sm-6 d-flex flex-column last-paragraph-no-margin md-mb-40px xs-mb-30px"
+          >
+          <div class=""><img src="./favicons/CA-Logo.png" alt=""></div>
+            <!-- 
+          p-3 mb-2 bg-light text-dark border-2
+          <a
+              href="http://new.ca-oms.in/"
+              class="footer-logo mb-100px d-inline-block"
+            >
+              <img
+                src="/favicons/CA-Logo.png"
+                data-at25x="/favicons/CA-Logo.png@x.png"
+                alt=""
+              />
+            </a> -->
+            <!-- <p class="lh-28">
+              We are providing high-quality courses for about ten years.
+            </p> -->
+            <div class="elements-social social-text-style-01 mt-9 xs-mt-15px">
+              <ul class="small-icon light fw-500">
+                <!-- <li>
+                  <a
+                    class="facebook"
+                    href="https://www.facebook.com/"
+                    target="_blank"
+                    >Fb.</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="instagram"
+                    href="https://www.instagram.com"
+                    target="_blank"
+                    >Ig.</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="twitter"
+                    href="https://www.twitter.com"
+                    target="_blank"
+                    >Tw.</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="behance"
+                    href="http://www.behance.com/"
+                    target="_blank"
+                    >Be.</a
+                  >
+                </li> -->
+              </ul> 
+            </div>
+          </div>
+          <!-- end footer column -->
+          <!-- start footer column -->
+          <div
+            class="col-lg-3 col-md-4 col-sm-6 ps-4 last-paragraph-no-margin md-mb-40px xs-mb-30px"
+          >
+            <span class="fw-500 fs-18 d-block text-black mb-10px "
+              >Useful Links</span
+            >
+            <ul>
+              <li >
+                <a href="index.html#pricingDetails">Pricing</a>
+              </li>
+              <li><a href="index.html#appfeature">App Features</a></li>
+              <li><a href="./freetrial.html">Free Trial</a></li>
+              
+            </ul>
+          </div>
+          <!-- end footer column -->
+           <!-- <div
+            class="col-lg-2 col-md-4 col-sm-6 ps-4 last-paragraph-no-margin md-mb-40px xs-mb-30px"
+          >
+            <span class="fw-500 fs-18 d-block text-black mb-10px"
+              >App Feature</span
+            >
+            <ul>
+              <li>
+                <a href="http://new.ca-oms.in/">App Feature</a>
+              </li>
+              <li><a href="http://new.ca-oms.in/">Pricing</a></li>
+             
+              
+            </ul>
+          </div> -->
+           <div
+            class="col-lg-3 col-md-4 col-sm-6 ps-4 last-paragraph-no-margin md-mb-40px xs-mb-30px"
+          >
+            <span class="fw-500 fs-18 d-block text-black mb-10px"
+              >Support</span
+            >
+            <ul>
+              <li>
+                <a href="./policy.html">Privacy</a>
+              </li>
+              <li><a href="./term.html">Terms</a></li>
+              <li><a href="./index.html#commonquestion">FAQ</a></li>
+              
+            </ul>
+
+            
+          </div>
+          <!-- start footer column -->
+          <div
+            class="col-lg-3 col-md-4 col-sm-6 last-paragraph-no-margin xs-mb-30px"
+           >
+            <span class="fw-500 fs-18 d-block text-Black mb-10px"
+              > Contact </span
+            >
+            
+            <span class=" d-block mb-10px"
+              ><a href="tel:8881361111">+91 888 136 1111 </a
+              > 
+              <!-- <span
+                class="bg-base-color fw-700 text-dark-gray lh-22 text-uppercase border-radius-30px ps-10px pe-10px fs-11 ms-5px d-inline-block align-middle"
+                >Free</span
+              > -->
+              </span
+            >
+           
+            <!-- <a
+              href="/cdn-cgi/l/email-protection#8fe7eae3ffcfebe0e2eee6e1a1ece0e2"
+              class="text-white text-decoration-line-bottom"
+              ><span
+                class="__cf_email__"
+                data-cfemail="660e030a162602090b070f084805090b"
+                >  </span
+              ></a
+            > -->
+            <a href="https://mail.google.com/mail/u/0/#inbox" class="text-decoration-line-bottom">
+              <span> nowgraydata@gmail.com </span>
+            </a>
+           <span class=" d-block mb-10px>
+
+            <a href="#">Address : Lucknow- Uttar Pradesh, India</a></span>
+          </div>
+          <!-- end footer column -->
+          <!-- start footer column -->
+          <!-- <div class="col-lg-3 col-md-12 col-sm-6 text-md-center text-lg-start">
+            <span class="fs-18 fw-500 d-block text-white mb-20px"
+              >Subscribe our newsletter</span
+            >
+            <div
+              class="d-inline-block w-100 newsletter-style-02 position-relative mb-15px"
+            >
+              <form
+                action="email-templates/subscribe-newsletter.php"
+                method="post"
+                class="position-relative w-100"
+              >
+                <input
+                  class="input-small bg-dark-gray border-color-transparent-white-light w-100 form-control required"
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email..."
+                />
+                <input type="hidden" name="redirect" value="" />
+                <button
+                onclick="buttonclick()"
+                  type="submit"
+                  aria-label="submit"
+                  class="btn pe-20px text-white fs-13 fw-500 lg-ps-15px lg-pe-15px submit"
+                >
+                  Submit <i class="feather icon-feather-arrow-right submit"></i>
+                </button>
+                <div
+                  class="form-results border-radius-4px pt-5px pb-5px ps-15px pe-15px fs-14 lh-22 mt-10px w-100 text-center position-absolute d-none"
+                ></div>
+              </form>
+            </div> -->
+            <!-- <div
+              class="d-flex align-items-center justify-content-center justify-content-md-center justify-content-sm-start justify-content-lg-start fs-14"
+            >
+              <div class="d-inline-block">
+                <i
+                  class="line-icon-Handshake me-10px align-middle icon-very-medium"
+                ></i
+                >Protecting your privacy
+              </div>
+            </div>
+          </div> -->
+          <!-- end footer column -->
+        </div>
+        <div
+          class="row align-items-center footer-bottom border-top border-color-bl pt-30px g-0"
+         >
+          <!-- start footer menu -->
+          <div class="col-xl-7 ps-0 text-center text-xl-start lg-mb-10px">
+            <ul class="footer-navbar fs-16 lh-normal">
+              <li class="nav-item active">
+                <a href="index.html#home" class="nav-link ps-0">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="index.html#pricingDetails" class="nav-link">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a href="index.html#appfeature" class="nav-link"
+                  >App Features </a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="./freetrial.html" class="nav-link"
+                  >Free Trial</a
+                >
+              </li>
+              <!-- <li class="nav-item">
+                <a href="demo-elearning-testimonial.html" class="nav-link"
+                  >Testimonial</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="demo-elearning-blog.html" class="nav-link">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a href="demo-elearning-contact.html" class="nav-link"
+                  >Contact</a
+                > -->
+              </li>
+            </ul>
+          </div>
+          <!-- end footer menu -->
+          <!-- start copyright -->
+          <div
+            class="col-xl-5 last-paragraph-no-margin text-center text-xl-end"
+          >
+            <p class="fs-16">
+              &copy; Copyright 2023 CA-OMS. All Rights Reserved.
+              <a
+                href="http://new.ca-oms.in/"
+                target="_blank"
+                class="text-white text-decoration-line-bottom"
+                >CA-OMS</a
+              >
+            </p>
+          </div>
+          <!-- start copyright -->
+        </div>
+      </div>
+    </footer>
+    <!-- end footer -->
+    <!-- start scroll progress -->
+    <div class="scroll-progress d-none d-xxl-block">
+      <a href="#" class="scroll-top" aria-label="scroll">
+        <span class="scroll-text">Scroll</span
+        ><span class="scroll-line"><span class="scroll-point"></span></span>
+      </a>
+    </div>
+    <!-- end scroll progress -->
+    <!-- javascript libraries -->
+    <script
+      data-cfasync="false"
+      src="js/cloudflare-static-email-decode.min.js"
+    ></script>
+    <script type="text/javascript" src="js/1062-js-jquery.js"></script>
+    <script type="text/javascript" src="js/8574-js-vendors.min.js"></script>
+    <script type="text/javascript" src="js/3241-js-main.js"></script>
+    <script>
+      function buttonclick() { 
+        console.log("event.target.")
+      }
+    </script>
+    
+  </body>
+
+</html>

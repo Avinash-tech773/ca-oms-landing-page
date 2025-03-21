@@ -1,0 +1,146 @@
+/* 
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: #000000;
+  display: grid;
+}
+.container h2 {
+  color: #ffffff;
+  font-size: 50px;
+  padding: 50px 0;
+  text-align: center;
+} */
+.price-row {
+  width: 70%;
+  padding-bottom: 500px;
+  padding-top: 200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 25px;
+}
+.price-col {
+  background: #ffffff;
+  border-radius: 21px;
+  color: #000000;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.price-col:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.price-col p {
+  font-size: 22px;
+}
+.price-col h3 {
+  font-size: 24px;
+}
+.price-col p {
+  font-size: 22px;
+}
+
+.price-col h3 {
+  font-size: 40px;
+  font-weight: 500;
+}
+.price-col h3 span {
+  font-size: 16px;
+}
+/* .price-col ul{
+  text-align: left;
+  margin: 20px 0;
+  color: #000000;
+  list-style: none;
+} */
+.price-col ul li {
+  margin: 15px 0;
+}
+.price-col ul li {
+  content: "\2022";
+  color: #000000;
+  /* font-weight: bold; */
+  margin-right: 8px;
+}
+.price-col button {
+  width: 100%;
+  padding: 14px 0;
+  background: #0f75bc;
+  color: #ffffff;
+  font-size: 15px;
+  border-radius: 6px;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: background 0.5s;
+}
+/* .price-col button:hover {
+  background: #0f75bc;
+  scale: 110%;
+  color: white;
+  transition: 0.5s ease-in-out; */
+
+.featureList {
+  list-style: none;
+  font-weight: 10px;
+}
+
+.listC {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.listC {
+  margin-bottom: 20px; /* Adds space between list items */
+}
+
+.listC > p {
+  font-size: 18px;
+  /* font-weight: bold; */
+  margin: 5px 0;
+}
+
+.sublist {
+  margin-top: 10px;
+  margin-left: 30px; /* Indents the sublist */
+  list-style-type: circle; /* Changes the bullet style */
+  color: #555; /* Subtle text color */
+}
+
+.sublist li {
+  margin: 5px 0; /* Adds space between sublist items */
+  font-size: 16px;
+}
+
+.aboveGetStarted {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.Dashboard {
+  padding: 10% 2%;
+  border-radius: 10px;
+}
+.heading {
+  background-color: #0f75bc;
+  color: white;
+  text-align: center;
+  border-radius: 21px 21px 0px 0px;
+}
+.heading1 {
+  text-align: center;
+  background-color: whitesmoke;
+  padding: 15px;
+}
+.heading2 {
+  background-color: whitesmoke;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+.heading3 {
+  background-color: whitesmoke;
+  border-radius: 21px 21px 0px 0px;
+}
